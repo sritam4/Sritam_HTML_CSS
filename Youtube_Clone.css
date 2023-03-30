@@ -38,7 +38,7 @@ body{
 }
 
 .hamburger-menu{
-    margin-left: 25px;
+    margin-left: 40px;
     cursor: pointer;
 }
 .logo{
@@ -68,12 +68,16 @@ body{
     border-radius: 2px;
     box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.141);
     background-color: rgb(240, 240, 240);
+    outline: none;
     
 }
 .search-box::placeholder{
     font-family: Roboto,Arial;
     font-size: 18px;
    
+}
+.search-box:focus{
+    border: 1px solid rgb(14, 91, 224);
 }
 
 .search-icons{
@@ -94,7 +98,11 @@ body{
     border-radius: 19px;
     border: none;
     cursor: pointer;
-   
+    background-color: rgb(254, 254, 254);
+    transition: background-color 0.2s;
+}
+.mic-icon:hover{
+    background-color: lightgrey;
 }
 
 .search-icons,
@@ -129,9 +137,10 @@ body{
 
  /* --------------------------------------------RIGHT SECTION */
 .right-section{
+    width: 250px;
     display: flex;
     align-items: center;
-    justify-self: space-between;
+    justify-content: center;
     flex-shrink: 0;    
 }  
 .right-icons{
@@ -140,14 +149,18 @@ body{
     cursor: pointer;
     
 } 
-.notification-icon{
+.notification-icon,
+.right-icons-container{
     position: relative;
-    
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
 }
 .notification-count{
     position: absolute;
-    top: 13px;
-    right: 9px;
+    top: 14px;
+    right: 4px;
     background-color: rgb(172, 3, 3);
     color: white;
     border-radius: 10px;
@@ -157,22 +170,18 @@ body{
     padding-right: 5px;
     font-family: Roboto,Arial;
     font-size: 12px;
+    cursor: pointer;
     
 }
 
-.right-icons-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.right-icons-container .tooltip{
+.right-icons-container .tooltip,
+.notification-icon .tooltip{
     position: absolute;
     background-color: rgb(118, 118, 118);
     color: white;
     padding: 3px 6px ;
     border-radius: 3px;
-    bottom: -23px;
+    bottom: -20px;
     font-family: Roboto,Arial;
     font-size: 12px;
     opacity: 0;
@@ -181,7 +190,8 @@ body{
     white-space: nowrap;
 }
 
-.right-icons-container:hover .tooltip{
+.right-icons-container:hover .tooltip,
+.notification-icon:hover .tooltip{
     opacity: 1;
 }
 
@@ -196,6 +206,7 @@ body{
     left: 0px;
     bottom: 0px;
     width: 100px;
+    z-index: 200;
 }
 .sidebar-link{
     height: 100px;
@@ -203,11 +214,13 @@ body{
     flex-direction: column;
     justify-content: center;  /*for vertical center*/
     align-items: center;    /*for horizontal center*/
-    width: 100px;    
+    width: 100px;  
+    cursor: pointer;  
     
 }
 .sidebar-link:hover{
     background-color: lightgray;
+   
 }
 .sidebar-link img{
     height: 30px;
@@ -218,15 +231,13 @@ body{
     font-family: Roboto,Arial;
     font-size: 14px;
     margin-top: 10px;
-    cursor: pointer;
+   
 
 }
 
 
 
 /*----------------------------------- CONTENT STYLE------------------- */
-
-/* ---------------------------MEDIA QUARY */
 
 
     
@@ -243,21 +254,41 @@ body{
     font-family: Roboto,Arial;
 
 }
-@media (max-width: 755px) {
+
+/* ----------------------------------------MEDIA QUARY */
+
+@media (max-width: 570px) {
+    .contents{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 571px) and (max-width: 930px) {
     .contents{
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (min-width: 756px) and (max-width: 1199px) {
+@media (min-width: 931px) and (max-width: 1339px) {
     .contents{
         grid-template-columns: 1fr 1fr 1fr;
     }
 } 
 
- @media (min-width: 1200px) {
+@media (min-width: 1340px) {
     .contents{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    body{
+        padding-left: 270px;
+        margin-right: 50px;
+    }
+    .sidebar{
+        width: 200px;
+    }
+    .sidebar-link{
+        width: 135px;
+        border-bottom: 1px solid rgb(217, 217, 217);
     }
     
 }
@@ -269,13 +300,16 @@ body{
 }
 .thumbnail{
     width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .video-time{
     color: white;
     background-color: black;
     position: absolute;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 300;
     padding: 4px;
     border-radius: 2px;
     right: 5px;

@@ -1,0 +1,51 @@
+
+ 
+    p{
+        font-family: roboto;
+        margin-top: 0px;
+        width: 280px;
+    
+    }
+
+    .video-title{
+        font-size: 18px;
+        font-weight: bold;
+        width: 280px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+
+    .views{
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        margin-bottom: 20px;
+    }
+
+    .creator{
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        margin-bottom: 20px;
+    }
+
+    .description{
+        width: 280px;
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        line-height: 20px;
+    }
+
+    .Ad{
+        margin-bottom: 20px;
+        font-size: 14px;
+        background-color: rgb(227, 65, 64);
+        color: white;
+        padding: 18px;
+    }
+
+    .shop{
+        cursor: pointer;
+    }
+    .shop:hover{
+        text-decoration: underline;
+        margin-left: 2px;
+    }

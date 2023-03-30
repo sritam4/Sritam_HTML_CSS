@@ -1,0 +1,13 @@
+.outer-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap:20px;
+    row-gap:15px;
+    cursor: pointer;
+}
+
+.inner-divs{
+    background-color: rgb(140, 191, 198);
+    height: 200px;
+    
+}
